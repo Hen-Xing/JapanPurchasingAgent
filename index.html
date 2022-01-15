@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+
+    <script language="javascript">
+        function ShowMeDate() {
+            var amountElement = document.getElementById("amount");
+            var amount = amountElement.value;
+            var transportElement = document.getElementById("transport");
+            var transport = transportElement.value;
+            var temp = amount + transport + 500;
+            if ((temp*0.275) < 2000) {
+                temp = temp * 0.255 + 40;
+                alert("台幣商品金額：\n" + temp);
+                temp = 0;
+            }
+            else if ((temp*0.275) > 2000) {
+                temp = temp * 0.255 +400;
+                alert("台幣商品金額：\n" + temp);
+                temp = 0;
+            }
+            else {
+                alert("輸入格式錯誤，請重新輸入！");
+                temp = 0;
+            }
+        }
+    </script>
+
+    <body>
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('assets/img/logo_img.jpg')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="page-heading">
+                            <h1>日拍價格試算</h1>
+                            <span class="subheading">
+                                <p><form>商品金額(日幣)：<input type="text" style="background-color:transparent;" name="amount" id="amount"></form></p>
+                                <p><form>商品運費(日幣)：<input type="text" style="background-color:transparent;" name="transport" id="transport"></form></p>
+                                <!-- <p><form>台幣商品金額：：<input type="text" style="background-color:transparent;" name="output" readonly="readonly"></form></p> -->
+                            </span>
+                            <input type="button" style="background-color:blueviolet;" value="進行試算" onclick="ShowMeDate();">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+        <main class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <p>以上計價方式不含國際運費需先支付半款做訂金</p>
+                        <p>金額計算方式為：</p>
+                        <p>(日幣價格+500+日本運費) *0.275</p>
+                        <p>本工作室收取固定手續費</p>
+                        <p>低於2000日幣或高於2萬日幣者會進行售價調整</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- Footer-->
+        <footer class="border-top">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <ul class="list-inline text-center">
+                            <li class="list-inline-item">
+                                <a href="https://www.facebook.com/StarKlash/">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="small text-center text-muted fst-italic">Copyright &copy; 星痕工作室 2021</div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
